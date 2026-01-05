@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ededed;
+  --foreground: #0a0a0a;
+  --blue: #00A3E0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-blue: var(--blue);
+  --font-pt-sans: var(--font-pt-sans);
+  --font-barlow: var(--font-barlow-condensed);
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  --color-blue: var(--blue);
+  font-family: var(--font-pt-sans), sans-serif;
+}
+
+/* 
+  NOTE: 
+  - --font-pt-sans maps to PT Sans
+  - --font-barlow maps to Barlow Condensed
+  Use className="font-pt-sans" or className="font-barlow" to apply.
+*/
