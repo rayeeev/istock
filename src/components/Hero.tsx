@@ -26,10 +26,10 @@ export default function Hero({ dict, locale }: HeroProps) {
         <section className="py-16 px-4 md:px-8 lg:px-12">
             {/* Header Section */}
             <div className="mb-12 lg:px-24">
-                <span className="block text-sm font-barlow uppercase tracking-[0.15em] text-gray-500 mb-4">
+                <span className="block text-sm font-condensed uppercase tracking-[0.15em] text-gray-500 mb-4">
                     {dict.label}
                 </span>
-                <h1 className="text-2xl lg:text-3xl leading-tight font-pt-sans max-w-2xl text-[var(--foreground)]">
+                <h1 className="text-2xl lg:text-3xl leading-tight font-usual max-w-2xl text-[var(--foreground)]">
                     {dict.headline}
                 </h1>
             </div>
@@ -61,13 +61,13 @@ export default function Hero({ dict, locale }: HeroProps) {
                             {/* Content */}
                             <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
                                 {/* Top Label */}
-                                <span className="text-xs font-barlow font-bold tracking-[0.15em] uppercase text-white/90">
+                                <span className="text-xs font-condensed font-bold tracking-[0.15em] uppercase text-white/90">
                                     {card.category}
                                 </span>
 
                                 {/* Bottom Content */}
                                 <div>
-                                    <h3 className="text-xl md:text-2xl font-pt-sans leading-snug mb-6 pr-4">
+                                    <h3 className="text-xl md:text-2xl font-usual leading-snug mb-6 pr-4">
                                         {card.title}
                                     </h3>
 

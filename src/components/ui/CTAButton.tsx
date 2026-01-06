@@ -10,7 +10,7 @@ export default function CTAButton({ dict, locale }: CTAButtonProps) {
     return (
         <Link
             href={`/${locale}/contacts`}
-            className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-[var(--blue)] border-3 border-white/20 text-white text-xl font-bold font-barlow uppercase tracking-wider rounded-full overflow-hidden transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,163,224,0.5)] hover:shadow-[0_10px_40px_-10px_rgba(0,163,224,0.5)] hover:scale-105 active:scale-95"
+            className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-[var(--blue)] border-3 border-white/20 text-white text-xl font-bold font-condensed uppercase tracking-wider rounded-full overflow-hidden transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,163,224,0.5)] hover:shadow-[0_10px_40px_-10px_rgba(0,163,224,0.5)] hover:scale-105 active:scale-95"
         >
             <span className="relative z-10">
                 {dict}

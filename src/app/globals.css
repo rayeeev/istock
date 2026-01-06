@@ -10,8 +10,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-blue: var(--blue);
-  --font-pt-sans: var(--font-pt-sans);
-  --font-barlow: var(--font-barlow-condensed);
+  --font-usual: var(--font-usual);
+  --font-condensed: var(--font-condensed);
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
 
   @keyframes infinite-scroll {
@@ -29,12 +29,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   --color-blue: var(--blue);
-  font-family: var(--font-pt-sans), sans-serif;
+  font-family: var(--font-usual);
 }
-
-/* 
-  NOTE: 
-  - --font-pt-sans maps to PT Sans
-  - --font-barlow maps to Barlow Condensed
-  Use className="font-pt-sans" or className="font-barlow" to apply.
-*/

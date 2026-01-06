@@ -32,10 +32,10 @@ export default function Services({ dict, locale }: ServicesProps) {
     return (
         <section id="Services" style={{ scrollMarginTop: '50px' }} className="bg-white py-16 px-4 md:px-8 lg:px-12">
             <div className="mb-12 lg:px-24">
-                <span className="block text-sm font-barlow uppercase tracking-[0.15em] text-gray-500 mb-4">
+                <span className="block text-sm font-condensed uppercase tracking-[0.15em] text-gray-500 mb-4">
                     {dict.subtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-pt-sans max-w-2xl text-[var(--foreground)]">
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-usual max-w-2xl text-[var(--foreground)]">
                     {dict.title}
                 </h2>
             </div>
@@ -57,7 +57,7 @@ export default function Services({ dict, locale }: ServicesProps) {
 
                             {/* Service Content */}
                             <div className="relative z-0">
-                                <h3 className="text-2xl font-bold font-pt-sans mb-6 pr-16 text-[var(--foreground)] group-hover:text-[var(--blue)] transition-colors duration-500 leading-tight">
+                                <h3 className="text-2xl font-bold font-usual mb-6 pr-16 text-[var(--foreground)] group-hover:text-[var(--blue)] transition-colors duration-500 leading-tight">
                                     {service.title}
                                 </h3>
 

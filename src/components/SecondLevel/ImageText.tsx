@@ -20,10 +20,10 @@ export default function ImageText({ dict, src, alt }: ImageTextProps) {
                     </div>
                 </div>
                 <div className="w-full md:w-1/2">
-                    <span className="block text-sm font-barlow uppercase tracking-[0.1em] text-gray-500 mb-4 md:mb-6 font-medium">
+                    <span className="block text-sm font-condensed uppercase tracking-[0.1em] text-gray-500 mb-4 md:mb-6 font-medium">
                         {dict.title}
                     </span>
-                    <h2 className="text-2xl lg:text-3xl leading-tight font-pt-sans text-[var(--foreground)]">
+                    <h2 className="text-2xl lg:text-3xl leading-tight font-usual text-[var(--foreground)]">
                         {dict.content}
                     </h2>
                 </div>

@@ -28,15 +28,15 @@ export default function Hero({ src, dict, alt }: HeroProps) {
                     <div className="max-w-4xl">
                         {/* Breadcrumb / Label */}
                         <div className="flex items-center gap-3 mb-4 text-white/80">
-                            <span className="font-barlow font-bold uppercase tracking-[0.15em] text-sm">
+                            <span className="font-condensed font-bold uppercase tracking-[0.15em] text-sm">
                                 {dict.label}
                             </span>
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-pt-sans text-white leading-tight mb-4">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-usual text-white leading-tight mb-4">
                             {dict.title}
                         </h1>
-                        <p className="text-xl md:text-2xl font-pt-sans text-white/90 max-w-2xl leading-relaxed">
+                        <p className="text-xl md:text-2xl font-usual text-white/90 max-w-2xl leading-relaxed">
                             {dict.subtitle}
                         </p>
                     </div>

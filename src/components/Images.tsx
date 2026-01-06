@@ -158,14 +158,14 @@ export default function Images({ locale, dict }: ImagesProps) {
                         <div className="max-w-5xl">
                             <motion.p
                                 variants={textVariants}
-                                className="text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 opacity-90"
+                                className="text-white text-xs md:text-sm font-condensed font-bold tracking-[0.2em] uppercase mb-4 opacity-90"
                             >
                                 {images[currentIndex].subtitle}
                             </motion.p>
 
                             <motion.h1
                                 variants={textVariants}
-                                className="text-white text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] mb-10 font-barlow"
+                                className="text-white text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] mb-10"
                             >
                                 {images[currentIndex].title}
                             </motion.h1>
@@ -195,7 +195,7 @@ export default function Images({ locale, dict }: ImagesProps) {
                         onClick={() => handleManualChange(index)}
                     >
                         <span
-                            className={`text-[10px] md:text-xs font-bold tracking-[0.15em] mb-3 uppercase transition-colors ${index === currentIndex
+                            className={`text-[10px] md:text-xs font-condensed font-bold tracking-[0.15em] mb-3 uppercase transition-colors ${index === currentIndex
                                 ? 'text-white'
                                 : 'text-white/50 group-hover:text-white/80'
                                 }`}

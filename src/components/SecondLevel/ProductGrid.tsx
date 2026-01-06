@@ -46,10 +46,10 @@ export default function ProductGrid({ dict, locale }: ProductProps) {
     return (
         <section id="Products" style={{ scrollMarginTop: '50px' }} className="bg-white py-16 px-4 md:px-8 lg:px-12">
             <div className="mb-12 lg:px-24">
-                <span className="block text-sm font-barlow uppercase tracking-[0.15em] text-gray-500 mb-4">
+                <span className="block text-sm font-condensed uppercase tracking-[0.15em] text-gray-500 mb-4">
                     {dict.subtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-pt-sans max-w-2xl text-[var(--foreground)]">
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-usual max-w-2xl text-[var(--foreground)]">
                     {dict.title}
                 </h2>
             </div>
@@ -71,7 +71,7 @@ export default function ProductGrid({ dict, locale }: ProductProps) {
 
                             {/* Service Content */}
                             <div className="relative z-0">
-                                <h3 className="text-2xl font-bold font-pt-sans mb-6 pr-16 text-[var(--foreground)] group-hover:text-[var(--blue)] transition-colors duration-500 leading-tight">
+                                <h3 className="text-2xl font-bold font-usual mb-6 pr-16 text-[var(--foreground)] group-hover:text-[var(--blue)] transition-colors duration-500 leading-tight">
                                     {product.title}
                                 </h3>
 
@@ -97,7 +97,7 @@ export default function ProductGrid({ dict, locale }: ProductProps) {
             <div className="flex justify-center">
                 <Link
                     href={`/${locale}/contacts`}
-                    className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-[var(--blue)] border-3 border-white/20 text-white text-xl font-bold font-barlow uppercase tracking-wider rounded-full overflow-hidden transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,163,224,0.5)] hover:shadow-[0_10px_40px_-10px_rgba(0,163,224,0.5)] hover:scale-105 active:scale-95"
+                    className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-[var(--blue)] border-3 border-white/20 text-white text-xl font-bold font-condensed uppercase tracking-wider rounded-full overflow-hidden transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,163,224,0.5)] hover:shadow-[0_10px_40px_-10px_rgba(0,163,224,0.5)] hover:scale-105 active:scale-95"
                 >
                     <span className="relative z-10">
                         {dict.cta}

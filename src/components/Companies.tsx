@@ -30,10 +30,10 @@ export default function Companies({ dict }: CompaniesProps) {
     <div className="py-20">
       <div className="px-4 md:px-8 lg:px-12 mb-16">
         <div className="lg:px-24">
-          <span className="block text-sm font-barlow uppercase tracking-[0.15em] text-gray-500 mb-4">
+          <span className="block text-sm font-condensed uppercase tracking-[0.15em] text-gray-500 mb-4">
             {dict.label}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-pt-sans max-w-5xl text-[var(--foreground)]">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] leading-tight font-usual max-w-5xl text-[var(--foreground)]">
             {dict.title}
           </h2>
         </div>

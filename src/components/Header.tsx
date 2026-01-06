@@ -86,7 +86,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                         <div className="relative flex items-center gap-3 cursor-pointer group group-hover:opacity-90 transition-opacity">
                             <div className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
                                 {currentFlag}
-                                <span className="uppercase font-barlow font-bold text-sm tracking-widest text-white/90">
+                                <span className="uppercase font-condensed font-bold text-sm tracking-widest text-white/90">
                                     {lang}
                                 </span>
                             </div>
@@ -112,7 +112,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                             <div className="h-4 w-[1px] bg-white/10 mr-2"></div>
 
                             <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-full border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-105 transition-all duration-300">
-                                <span className="uppercase font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] text-white/90">
+                                <span className="uppercase font-condensed font-bold text-[10px] sm:text-xs tracking-[0.2em] text-white/90">
                                     {dict.Header.nav[pathname?.split('/')[2] || ''] || dict.Header.menu}
                                 </span>
                                 <svg
@@ -149,7 +149,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                                     href={`/${lang}/${item}`}
                                     className="relative group py-2"
                                 >
-                                    <span className="uppercase text-sm lg:text-[15px] font-bold font-barlow tracking-[0.1em] text-white/80 group-hover:text-white transition-colors duration-500">
+                                    <span className="uppercase text-sm lg:text-[15px] font-bold font-condensed tracking-[0.1em] text-white/80 group-hover:text-white transition-colors duration-500">
                                         {dict.Header.nav[item]}
                                     </span>
                                     {/* Premium Underline Indicator */}

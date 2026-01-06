@@ -28,7 +28,7 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                             </div>
 
                             <div className="relative z-10">
-                                <h3 className="font-barlow font-bold text-2xl mb-6 text-[var(--foreground)] pr-16 tracking-wide">
+                                <h3 className="font-condensed font-bold text-2xl mb-6 text-[var(--foreground)] pr-16 tracking-wide">
                                     {company.title}
                                 </h3>
 
@@ -38,7 +38,7 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                                             <User size={20} strokeWidth={1.5} />
                                         </div>
                                         <div className="pt-2">
-                                            <p className="font-pt-sans text-lg text-gray-600 font-medium">
+                                            <p className="font-usual text-lg text-gray-600 font-medium">
                                                 {company.name}
                                             </p>
                                         </div>
@@ -52,7 +52,7 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                                             <Mail size={18} strokeWidth={2} />
                                         </div>
                                         <div className="pt-1">
-                                            <span className="font-pt-sans text-lg text-[var(--foreground)] group-hover/link:text-[var(--blue)] transition-colors duration-300 flex items-center gap-2">
+                                            <span className="font-usual text-lg text-[var(--foreground)] group-hover/link:text-[var(--blue)] transition-colors duration-300 flex items-center gap-2">
                                                 {company.email}
                                                 <ArrowUpRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
                                             </span>

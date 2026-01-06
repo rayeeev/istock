@@ -16,10 +16,10 @@ export default function Footer({ dict, lang }: FooterProps) {
 
                     {/* Column 1: Quick Links */}
                     <div className="md:col-span-3">
-                        <h3 className="text-md font-bold uppercase tracking-widest mb-6 text-gray-900">
+                        <h3 className="text-md font-condensed font-bold uppercase tracking-widest mb-6 text-gray-900">
                             {dict.Footer.quickLinks}
                         </h3>
-                        <div className="flex flex-col gap-4 font-pt-sans text-md text-gray-600">
+                        <div className="flex flex-col gap-4 font-usual text-md text-gray-600">
                             <Link href={`/${lang}/about`} className="hover:text-black transition-colors">
                                 {dict.Footer.nav.about}
                             </Link>
@@ -37,10 +37,10 @@ export default function Footer({ dict, lang }: FooterProps) {
 
                     {/* Column 2: Site Information (Contact) */}
                     <div className="md:col-span-3">
-                        <h3 className="text-md font-bold uppercase tracking-widest mb-6 text-gray-900">
+                        <h3 className="text-md font-condensed font-bold uppercase tracking-widest mb-6 text-gray-900">
                             {dict.Footer.contactInfo.title}
                         </h3>
-                        <div className="flex flex-col gap-4 font-pt-sans text-md text-gray-600">
+                        <div className="flex flex-col gap-4 font-usual text-md text-gray-600">
                             <span>{dict.Footer.contactInfo.address}</span>
                             <a href={`mailto:${dict.Footer.contactInfo.email}`} className="hover:text-black transition-colors">
                                 {dict.Footer.contactInfo.email}
@@ -78,14 +78,20 @@ export default function Footer({ dict, lang }: FooterProps) {
                 {/* Bottom Section */}
                 <div className="mt-20 flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Copyright */}
-                    <p className="text-xs text-gray-500 font-medium order-1">
-                        {dict.Footer.copyright}
-                    </p>
+                    <div className="md:w-1/3 flex justify-center md:justify-start order-1">
+                        <p className="text-sm text-gray-500 font-medium">
+                            {dict.Footer.copyright}
+                        </p>
+                    </div>
 
-                    <Logo className="order-2" lang={lang} />
+                    <div className="md:w-1/3 flex justify-center order-2">
+                        <Logo lang={lang} />
+                    </div>
 
                     {/* Scroll to Top */}
-                    <ScrollToTop className="order-3" />
+                    <div className="md:w-1/3 flex justify-center md:justify-end order-3">
+                        <ScrollToTop />
+                    </div>
                 </div>
             </div>
         </footer>
