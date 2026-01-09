@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/data/dictionaries";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const usualFont = PT_Sans({
   variable: "--font-usual",
@@ -46,6 +47,8 @@ export default async function RootLayout({
         <main className="flex-grow">{children}</main>
 
         <Footer dict={dict} lang={locale} />
+
+        <SpeedInsights />
       </body>
     </html>
   );
