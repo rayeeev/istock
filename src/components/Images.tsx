@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ArrowButton from '@/components/ui/ArrowButton';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import p1 from '../../public/cleaning.jpg';
-import p2 from '../../public/about.jpg';
+import p2 from '../../public/about.jpeg';
 import p3 from '../../public/dioxel.jpg';
 
 interface ImagesProps {
@@ -27,6 +27,9 @@ interface ImagesProps {
 }
 
 export default function Images({ locale, dict }: ImagesProps) {
+    const INITIAL_SHRINK_DELAY_MS = 2000;
+    const SLIDE_DURATION_MS = 6500;
+
     const images = [
         { src: p1, title: dict.title1, subtitle: dict.subtitle1, link: dict.link1 },
         { src: p2, title: dict.title2, subtitle: dict.subtitle2, link: dict.link2 },
@@ -35,58 +38,22 @@ export default function Images({ locale, dict }: ImagesProps) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isShortened, setIsShortened] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(true);
-
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     // Initial hero height animation
     useEffect(() => {
-        const timer = setTimeout(() => setIsShortened(true), 2000);
+        const timer = setTimeout(() => setIsShortened(true), INITIAL_SHRINK_DELAY_MS);
         return () => clearTimeout(timer);
-    }, []);
+    }, [INITIAL_SHRINK_DELAY_MS]);
 
-    // Progress timer (NO slide changes here)
-    const startTimer = useCallback(() => {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-
-        const duration = 5000;
-        const tick = 50;
-        const step = (tick / duration) * 100;
-
-        intervalRef.current = setInterval(() => {
-            setProgress((prev) => {
-                const next = prev + step;
-                return next >= 100 ? 100 : next;
-            });
-        }, tick);
-    }, []);
-
-    // Start / stop timer based on animation + progress
+    // Auto-slide rotation without high-frequency state updates
     useEffect(() => {
-        if (!isAnimating && progress < 100) {
-            startTimer();
-        } else {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        }
-
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [isAnimating, progress, startTimer]);
-
-    // Advance slide when progress completes (SINGLE SOURCE OF TRUTH)
-    useEffect(() => {
-        if (progress >= 100 && !isAnimating) {
+        const timer = setInterval(() => {
             setCurrentIndex((curr) => (curr + 1) % images.length);
-        }
-    }, [progress, isAnimating, images.length]);
-
-    // Reset state on slide change
-    useEffect(() => {
-        setProgress(0);
-        setIsAnimating(true);
-    }, [currentIndex]);
+        }, SLIDE_DURATION_MS);
+        return () => {
+            clearInterval(timer);
+        };
+    }, [images.length, SLIDE_DURATION_MS]);
 
     const handleManualChange = (index: number) => {
         if (index === currentIndex) return;
@@ -136,9 +103,6 @@ export default function Images({ locale, dict }: ImagesProps) {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    onAnimationComplete={(def) => {
-                        if (def === 'animate') setIsAnimating(false);
-                    }}
                 >
                     {/* Image */}
                     <div className="absolute inset-0 z-0">
@@ -146,7 +110,10 @@ export default function Images({ locale, dict }: ImagesProps) {
                             src={images[currentIndex].src}
                             alt={images[currentIndex].title}
                             fill
-                            priority
+                            priority={currentIndex === 0}
+                            sizes="100vw"
+                            quality={78}
+                            placeholder="blur"
                             className="object-cover brightness-[0.7] contrast-[1.1]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
@@ -207,13 +174,13 @@ export default function Images({ locale, dict }: ImagesProps) {
                             <AnimatePresence>
                                 {index === currentIndex && (
                                     <motion.div
-                                        key="progress-bar"
+                                        key={`progress-bar-${currentIndex}`}
                                         className="absolute top-0 left-0 h-full bg-[#00A3E0]"
                                         initial={{ opacity: 0, width: '0%' }}
-                                        animate={{ opacity: 1, width: `${progress}%` }}
+                                        animate={{ opacity: 1, width: '100%' }}
                                         exit={{ opacity: 0 }}
                                         transition={{
-                                            width: { duration: 0.05, ease: 'linear' },
+                                            width: { duration: SLIDE_DURATION_MS / 1000, ease: 'linear' },
                                             opacity: { duration: 0.3 },
                                         }}
                                     />

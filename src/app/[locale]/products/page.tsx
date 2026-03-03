@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import products from '../../../../public/products.jpg';
 import dioxel from '../../../../public/dioxel.jpg';
 import Hero from '@/components/SecondLevel/Hero';
@@ -6,8 +7,27 @@ import ProductGrid from '@/components/SecondLevel/ProductGrid';
 import Dioxel from '@/components/SecondLevel/Dioxel';
 import ContactUs from '@/components/ContactUs';
 import { getDictionary } from '@/data/dictionaries';
+import { buildPageMetadata, SITE_NAME } from '@/lib/seo';
 
-export default async function Products({ params }: { params: { locale: string } }) {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const dict = await getDictionary(locale);
+
+    return buildPageMetadata({
+        locale,
+        path: "/products",
+        title: `${SITE_NAME} | ${dict.ProductsPage?.hero?.title ?? "Products"}`,
+        description:
+            dict.ProductsPage?.hero?.subtitle ??
+            "Explore ISTOCK industrial chemical products and treatment reagents.",
+    });
+}
+
+export default async function Products({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const dict = await getDictionary(locale);
 

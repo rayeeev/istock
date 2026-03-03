@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import about from "../../public/about.jpg";
+import about from "../../public/about.jpeg";
 import ArrowButton from "./ui/ArrowButton";
 
 interface ContactUsProps {
@@ -28,8 +28,10 @@ export default function ContactUs({ dict, locale }: ContactUsProps) {
                     src={about}
                     alt="Our production facility"
                     fill
+                    sizes="100vw"
+                    quality={72}
+                    placeholder="blur"
                     className="object-cover object-center"
-                    priority
                 />
 
                 {/* Dark overlay for text readability */}

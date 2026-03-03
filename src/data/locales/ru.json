@@ -139,6 +139,12 @@
             "linkText": "Контакты"
         }
     },
+    "OfficeStatus": {
+        "open": "Офисы открыты",
+        "willOpenIn": "Офисы откроются через",
+        "hour": "час",
+        "hours": "часов"
+    },
     "AboutPage": {
         "hero": {
             "label": "НАША МИССИЯ",

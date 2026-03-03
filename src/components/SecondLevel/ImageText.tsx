@@ -15,7 +15,11 @@ export default function ImageText({ dict, src, alt }: ImageTextProps) {
                         <Image
                             src={src}
                             alt={alt}
-                            className="object-cover w-full h-full"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={74}
+                            placeholder="blur"
+                            className="object-cover"
                         />
                     </div>
                 </div>

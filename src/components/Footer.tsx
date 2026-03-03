@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import ScrollToTop from "./ui/ScrollToTop";
 import Logo from "./ui/Logo";
+import OfficeStatus from "./ui/OfficeStatus";
 
 interface FooterProps {
     dict: any;
@@ -12,7 +13,7 @@ export default function Footer({ dict, lang }: FooterProps) {
     return (
         <footer className="text-black pt-20 pb-10 border-t border-gray-200">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-18 md:gap-10">
 
                     {/* Column 1: Quick Links */}
                     <div className="md:col-span-3">
@@ -48,6 +49,12 @@ export default function Footer({ dict, lang }: FooterProps) {
                             <a href={`tel:${dict.Footer.contactInfo.phone}`} className="hover:text-black transition-colors">
                                 {dict.Footer.contactInfo.phone}
                             </a>
+                            <OfficeStatus
+                                slug={lang}
+                                dict={dict.OfficeStatus}
+                                className="inline-flex w-fit hover:text-black transition-colors"
+                                textClassName="font-usual text-md"
+                            />
                         </div>
                     </div>
 

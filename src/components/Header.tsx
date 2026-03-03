@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Logo from "./ui/Logo";
+import OfficeStatus from "./ui/OfficeStatus";
 
 interface HeaderProps {
     dict: any;
@@ -45,11 +46,25 @@ export default function Header({ dict, lang }: HeaderProps) {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        let frame: number | undefined;
+
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 35);
+            if (frame) return;
+
+            frame = window.requestAnimationFrame(() => {
+                frame = undefined;
+                const nextScrolled = window.scrollY > 35;
+                setIsScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
+            });
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            if (frame) window.cancelAnimationFrame(frame);
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -159,8 +174,16 @@ export default function Header({ dict, lang }: HeaderProps) {
                         </nav>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <Logo textClassName="text-white tracking-[0.15em] hover:opacity-80 transition-opacity" lang={lang} />
+                    <div className="flex items-center gap-8">
+                        <OfficeStatus
+                            slug={lang}
+                            dict={dict.OfficeStatus}
+                            className="group hidden lg:inline-flex px-3 py-1.5 rounded-full border border-white/15 bg-white/5"
+                            textClassName="uppercase text-sm lg:text-[15px] font-bold font-condensed tracking-[0.1em] text-white/80 group-hover:text-white transition-colors duration-500"
+                            openDotClassName="bg-emerald-400"
+                            closedDotClassName="bg-gray-400"
+                        />
+                        <Logo textClassName="text-white hover:opacity-80 transition-opacity" lang={lang} />
                     </div>
                 </div>
             </div>

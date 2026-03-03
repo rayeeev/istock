@@ -26,7 +26,11 @@ export default function Dioxel({ dict, src, alt, locale }: DioxelProps) {
                         <Image
                             src={src}
                             alt={alt}
-                            className="object-cover w-full h-full"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            quality={74}
+                            placeholder="blur"
+                            className="object-cover"
                         />
                     </div>
                 </div>

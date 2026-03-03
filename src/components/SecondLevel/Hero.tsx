@@ -15,6 +15,11 @@ export default function Hero({ src, dict, alt }: HeroProps) {
                     <Image
                         src={src}
                         alt={alt}
+                        fill
+                        priority
+                        sizes="100vw"
+                        quality={80}
+                        placeholder="blur"
                         className="h-full w-full object-cover"
                     />
                 </div>

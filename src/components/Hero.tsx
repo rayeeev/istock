@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ArrowButton from "./ui/ArrowButton";
-import p1 from "../../public/about.jpg";
+import p1 from "../../public/about.jpeg";
 import p2 from "../../public/dioxel.jpg";
 import p3 from "../../public/cleaning.jpg";
 import p4 from "../../public/storing.jpg";
@@ -48,7 +48,9 @@ export default function Hero({ dict, locale }: HeroProps) {
                                 alt={card.title}
                                 fill
                                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                priority={index < 2} // Prioritize loading first two images
+                                sizes="(max-width: 768px) 85vw, (max-width: 1280px) 45vw, 40vw"
+                                quality={72}
+                                placeholder="blur"
                             />
 
                             {/* Overlays */}

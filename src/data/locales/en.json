@@ -139,6 +139,12 @@
             "linkText": "Contact Us"
         }
     },
+    "OfficeStatus": {
+        "open": "Offices are currently open",
+        "willOpenIn": "Offices will open in",
+        "hour": "hour",
+        "hours": "hours"
+    },
     "AboutPage": {
         "hero": {
             "label": "OUR MISSION",

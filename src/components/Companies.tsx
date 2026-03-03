@@ -46,6 +46,8 @@ export default function Companies({ dict }: CompaniesProps) {
               <Image
                 src={logo.src}
                 alt={logo.alt}
+                sizes="(max-width: 768px) 160px, 192px"
+                quality={68}
                 className="h-48 w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500 cursor-pointer"
               />
             </li>
@@ -60,6 +62,8 @@ export default function Companies({ dict }: CompaniesProps) {
               <Image
                 src={logo.src}
                 alt={logo.alt}
+                sizes="(max-width: 768px) 160px, 192px"
+                quality={68}
                 className="h-48 w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500 cursor-pointer"
               />
             </li>
