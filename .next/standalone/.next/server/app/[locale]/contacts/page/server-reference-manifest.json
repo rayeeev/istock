@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40530cc2e80ecf78c2c8ac39132a5a1895915f7d60": {
+      "workers": {
+        "app/[locale]/contacts/page": {
+          "moduleId": 6456,
+          "async": false,
+          "exportedName": "sendTelegramMessage",
+          "filename": "src/app/actions/sendTelegramMessage.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/contacts/page": "action-browser"
+      },
+      "exportedName": "sendTelegramMessage",
+      "filename": "src/app/actions/sendTelegramMessage.ts"
+    }
+  },
+  "edge": {}
+}
