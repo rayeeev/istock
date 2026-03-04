@@ -1,6 +1,6 @@
 {
   "node": {
-    "40530cc2e80ecf78c2c8ac39132a5a1895915f7d60": {
+    "408754ef204cef2e9dd5bebe7d259a02b239877293": {
       "workers": {
         "app/[locale]/contacts/page": {
           "moduleId": 6456,
@@ -17,5 +17,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "0Td/3m52EWTeg4yxg1zoW+mEUvwXfNfeYERdQ+NbLFw="
+  "encryptionKey": "CXAhHDiakC0b1AV2w/d3P821vCqfri4nG+Tj/ZSgwjQ="
 }

@@ -9,6 +9,6 @@ Read more: https://nextjs.org/docs/messages/invalid-use-server-value`),"__NEXT_E
 
 <b>Message:</b>
 ${g}
-    `;try{let a=await fetch(`https://api.telegram.org/bot${b}/sendMessage`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:c,text:i,parse_mode:"HTML"})}),d=await a.json();if(!a.ok||!d.ok)return console.error("Telegram API Error:",d),{success:!1,error:d.description||"Failed to send message."};return{success:!0}}catch(a){return console.error("Error sending Telegram message:",a),{success:!1,error:"Failed to send message."}}}(0,a.i(13095).ensureServerEntryExports)([c]),(0,b.registerServerReference)(c,"40530cc2e80ecf78c2c8ac39132a5a1895915f7d60",null),a.s([],25749),a.i(25749),a.s(["40530cc2e80ecf78c2c8ac39132a5a1895915f7d60",()=>c],6456)}];
+    `;try{let a=await fetch(`https://api.telegram.org/bot${b}/sendMessage`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:c,text:i,parse_mode:"HTML"})}),d=await a.json();if(!a.ok||!d.ok)return console.error("Telegram API Error:",d),{success:!1,error:d.description||"Failed to send message."};return{success:!0}}catch(a){return console.error("Error sending Telegram message:",a),{success:!1,error:"Failed to send message."}}}(0,a.i(13095).ensureServerEntryExports)([c]),(0,b.registerServerReference)(c,"408754ef204cef2e9dd5bebe7d259a02b239877293",null),a.s([],25749),a.i(25749),a.s(["408754ef204cef2e9dd5bebe7d259a02b239877293",()=>c],6456)}];
 
 //# sourceMappingURL=_3324ae04._.js.map
