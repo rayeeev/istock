@@ -3,6 +3,7 @@ import { PT_Sans, Fira_Sans } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HashScroll from "@/components/HashScroll";
 import { getDictionary } from "@/data/dictionaries";
 import { buildPageMetadata, LOGO_URL, SITE_NAME, SITE_URL } from "@/lib/seo";
 
@@ -93,6 +94,7 @@ export default async function RootLayout({
           <Header dict={dict} lang={locale} />
         </div>
 
+        <HashScroll />
         <main className="flex-grow">{children}</main>
 
         <Footer dict={dict} lang={locale} />

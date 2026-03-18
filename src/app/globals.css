@@ -35,6 +35,11 @@ body {
   scrollbar-gutter: stable;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
 html,
 body {
   min-height: 100%;
