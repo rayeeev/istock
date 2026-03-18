@@ -21,6 +21,7 @@ export default function ContactUs({ dict, locale }: ContactUsProps) {
         <section className="relative w-full overflow-hidden h-[165px] md:h-[220px] group cursor-pointer">
             <Link
                 href={`/${locale}/contacts#contact-form`}
+                scroll={false}
                 onClick={handleClick}
                 className="block w-full h-full"
             >

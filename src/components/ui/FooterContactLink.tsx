@@ -16,6 +16,7 @@ export default function FooterContactLink({
     return (
         <Link
             href={href}
+            scroll={false}
             className={`group relative inline-flex w-fit items-center justify-center gap-3 px-8 py-3 bg-[var(--blue)] border-2 border-white/20 text-white text-sm font-bold font-condensed uppercase tracking-widest rounded-full overflow-hidden transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(0,163,224,0.5)] hover:shadow-[0_8px_30px_-6px_rgba(0,163,224,0.6)] hover:scale-105 active:scale-95 ${isContactsPage ? "opacity-0 pointer-events-none" : ""}`}
         >
             <span className="relative z-10">{children}</span>
