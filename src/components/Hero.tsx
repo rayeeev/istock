@@ -6,7 +6,7 @@ import ArrowButton from "./ui/ArrowButton";
 import p1 from "../../public/about.jpeg";
 import p2 from "../../public/dioxel.jpeg";
 import p3 from "../../public/expertise.jpeg";
-import p4 from "../../public/storing.jpg";
+import p4 from "../../public/cleaning.jpg";
 
 interface HeroProps {
     dict: any;

@@ -30,7 +30,7 @@
         "subtitle1": "PRODUCTS AND SOLUTIONS",
         "link1": "/products#Products",
         "title2": "Visit our state-of-the-art production facility in Karaganda.",
-        "subtitle2": "OUR MANUFACTURING",
+        "subtitle2": "OUR PRODUCTION",
         "link2": "/about#ImageText",
         "title3": "DIOXEL®: Innovative water disinfection technologies.",
         "subtitle3": "TECHNOLOGIES OF THE FUTURE",
@@ -39,11 +39,11 @@
     },
     "Hero": {
         "label": "KAZAKHSTANI MANUFACTURER",
-        "headline": "ISTOCK Group is a leader in manufacturing chemicals and equipment for industrial water treatment. We preserve water quality for the future.",
+        "headline": "ISTOCK Group is the leading producer of chemicals and equipment for industrial water treatment in the Republic of Kazakhstan.",
         "cards": [
             {
-                "category": "OUR MANUFACTURING",
-                "title": "Own production site in Karaganda, meeting global chemical industry standards."
+                "category": "OUR PRODUCTION",
+                "title": "Own production facility in Karaganda, meeting global chemical industry standards."
             },
             {
                 "category": "INNOVATION",
@@ -254,14 +254,14 @@
         "hero": {
             "label": "PROJECTS",
             "title": "Projects and Partners",
-            "subtitle": "Reputation is a core component of success. Our experience and high level of responsibility towards our clients allow us to guarantee the high quality of technical solutions at every stage."
+            "subtitle": "Our experience and high level of responsibility towards our clients allow us to guarantee the high quality of technical solutions at every stage."
         },
         "TextHero": {
             "title": "Projects and Partners",
             "content": "The ISTOCK engineering department specializes in the implementation of comprehensive water and wastewater treatment projects. Using a personalized approach, we offer cutting-edge technical solutions."
         },
         "Solutions": {
-            "label": "Manufacturing Company",
+            "label": "Production Company",
             "title": "Individual Solutions",
             "content": "On a manufacturing scale, we remain committed to high quality and extreme attention to every partner. Successful pilot industrial trials at ANPZ LLP and AlES JSC confirm the reliability of our technologies. We value our reputation and are fully responsible for product quality at every stage of its application.",
             "cta": "Request an Audit",
