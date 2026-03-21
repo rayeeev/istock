@@ -30,6 +30,12 @@ export default function Images({ locale, dict }: ImagesProps) {
     const INITIAL_SHRINK_DELAY_MS = 2000;
     const SLIDE_DURATION_MS = 6500;
 
+    // Lock viewport height on mount to prevent mobile browser chrome jitter
+    const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+    useEffect(() => {
+        setViewportHeight(window.innerHeight);
+    }, []);
+
     const images = [
         { src: p1, title: dict.title1, subtitle: dict.subtitle1, link: dict.link1 },
         { src: p2, title: dict.title2, subtitle: dict.subtitle2, link: dict.link2 },
@@ -92,8 +98,12 @@ export default function Images({ locale, dict }: ImagesProps) {
 
     return (
         <motion.section
-            initial={{ height: '100svh' }}
-            animate={{ height: isShortened ? '95svh' : '100svh' }}
+            initial={{ height: viewportHeight ?? '100svh' }}
+            animate={{
+                height: isShortened
+                    ? (viewportHeight ? viewportHeight * 0.95 : '95svh')
+                    : (viewportHeight ?? '100svh'),
+            }}
             transition={{ type: 'spring', stiffness: 70, damping: 20, mass: 1 }}
             className="relative w-full overflow-hidden bg-black"
         >
