@@ -1,8 +1,9 @@
-import { Mail, User, Building2, ArrowUpRight } from "lucide-react";
+import { Mail, User, Phone, Building2, ArrowUpRight } from "lucide-react";
 
 interface Company {
     title: string;
     name: string;
+    phone: string;
     email: string;
 }
 
@@ -20,7 +21,7 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                     {Object.values(dict.info).map((company: Company, index: number) => (
                         <div
                             key={index}
-                            className="group relative bg-[var(--background)] rounded-[3rem] p-8 md:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-transparent hover:border-[var(--blue)]/10"
+                            className="group relative bg-[var(--background)] rounded-[3rem] p-8 md:p-10 transition-all duration-300 hover:-translate-y-2 transform-gpu hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-transparent hover:border-[var(--blue)]/10"
                         >
                             {/* Decorative Icon Background */}
                             <div className="absolute top-8 right-8 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -35,7 +36,7 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                                 <div className="space-y-4">
                                     <div className="flex items-start space-x-4">
                                         <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm text-[var(--blue)]">
-                                            <User size={20} strokeWidth={1.5} />
+                                            <User size={18} strokeWidth={2} />
                                         </div>
                                         <div className="pt-2">
                                             <p className="font-usual text-lg text-gray-600 font-medium">
@@ -43,6 +44,18 @@ export default function ContactGrid({ dict }: ContactGridProps) {
                                             </p>
                                         </div>
                                     </div>
+
+                                    <a href={`tel:${company.phone}`} className="flex items-start space-x-4 group/link">
+                                        <div className="w-10 h-10 rounded-full bg-[var(--blue)] text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover/link:scale-110 transition-transform duration-300">
+                                            <Phone size={18} strokeWidth={2} />
+                                        </div>
+                                        <div className="pt-1">
+                                            <span className="font-usual text-lg text-[var(--foreground)] group-hover/link:text-[var(--blue)] transition-colors duration-300 flex items-center gap-2">
+                                                {company.phone}
+                                                <ArrowUpRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
+                                            </span>
+                                        </div>
+                                    </a>
 
                                     <a
                                         href={`mailto:${company.email}`}

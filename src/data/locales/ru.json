@@ -299,16 +299,19 @@
             "solutions": {
                 "title": "ТОО «ISTOCK Solutions»",
                 "name": "Аскар Мусин",
+                "phone": "+7 (702) 282-8817",
                 "email": "istock@istock.kz"
             },
             "chemi": {
                 "title": "ТОО «ISTOCK CHEMI»",
                 "name": "Рамазан Алимбетов",
+                "phone": "+7 (775) 596-6630",
                 "email": "istock@istock.kz"
             },
             "water": {
                 "title": "ТОО «ISTOCK Water Technologies & Solutions»",
                 "name": "Раимбек Маратов",
+                "phone": "+7 (776) 455-5545",
                 "email": "office@istock.kz"
             }
         },

@@ -38,6 +38,7 @@ export default function Images({ locale, dict }: ImagesProps) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isShortened, setIsShortened] = useState(false);
+    const [timerReset, setTimerReset] = useState(0);
 
     // Initial hero height animation
     useEffect(() => {
@@ -45,7 +46,7 @@ export default function Images({ locale, dict }: ImagesProps) {
         return () => clearTimeout(timer);
     }, [INITIAL_SHRINK_DELAY_MS]);
 
-    // Auto-slide rotation without high-frequency state updates
+    // Auto-slide rotation — resets fully on manual change via timerReset
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentIndex((curr) => (curr + 1) % images.length);
@@ -53,11 +54,12 @@ export default function Images({ locale, dict }: ImagesProps) {
         return () => {
             clearInterval(timer);
         };
-    }, [images.length, SLIDE_DURATION_MS]);
+    }, [images.length, SLIDE_DURATION_MS, timerReset]);
 
     const handleManualChange = (index: number) => {
         if (index === currentIndex) return;
         setCurrentIndex(index);
+        setTimerReset((c) => c + 1);
     };
 
     const slideVariants = {
@@ -90,8 +92,8 @@ export default function Images({ locale, dict }: ImagesProps) {
 
     return (
         <motion.section
-            initial={{ height: '100vh' }}
-            animate={{ height: isShortened ? '95vh' : '100vh' }}
+            initial={{ height: '100svh' }}
+            animate={{ height: isShortened ? '95svh' : '100svh' }}
             transition={{ type: 'spring', stiffness: 70, damping: 20, mass: 1 }}
             className="relative w-full overflow-hidden bg-black"
         >
