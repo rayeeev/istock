@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import cleaning from "../../../../public/cleaning.jpg";
-import about from "../../../../public/facility.jpg";
+import about from "../../../../public/facility.jpeg";
 import Hero from "@/components/SecondLevel/Hero";
 import TextHero from "@/components/SecondLevel/TextHero";
 import ImageText from "@/components/SecondLevel/ImageText";
